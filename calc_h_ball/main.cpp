@@ -23,10 +23,11 @@ int main()
 	const float initialHeight = getHeight();
 	float height = initialHeight;
 
+	cout << "the ball is at the height: " << height << "meteres" << endl;
+	
 	int timeInSec = 0;
 	while (height > 0)
 	{
-		cout << "At " << timeInSec << "seconds, the ball is at the height: " << height << "meteres" << endl;
 		timeInSec++;
 		height = calcHeight(timeInSec, initialHeight);
 		cout << "At " << timeInSec << "seconds, the ball is at the height: " << height << "meteres" << endl;
