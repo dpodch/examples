@@ -7,7 +7,7 @@ using namespace std;
 float calcHeight(float timeInSec, float initialHeight)
 {
 	static const float g = 9.8;
-    return initialHeight - g * pow(timeInSec, 2) / 2;
+	return initialHeight - g * pow(timeInSec, 2) / 2;
 }
 
 float getHeight()
@@ -20,16 +20,16 @@ float getHeight()
 
 int main() 
 {
-   const float initialHeight = getHeight();
-   float height = initialHeight;
+	const float initialHeight = getHeight();
+	float height = initialHeight;
 
-   int timeInSec = 0;
-   while (height > 0)
-   {
-       cout << "At " << timeInSec << "seconds, the ball is at the height: " << height << "meteres" << endl;
-       timeInSec++;
-       height = calcHeight(timeInSec, initialHeight);
-   }
+	int timeInSec = 0;
+	while (height > 0)
+	{
+		cout << "At " << timeInSec << "seconds, the ball is at the height: " << height << "meteres" << endl;
+		timeInSec++;
+		height = calcHeight(timeInSec, initialHeight);
+	}
 
-    return 0;
+	return 0;
 }
