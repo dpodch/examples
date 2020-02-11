@@ -29,6 +29,7 @@ int main()
 		cout << "At " << timeInSec << "seconds, the ball is at the height: " << height << "meteres" << endl;
 		timeInSec++;
 		height = calcHeight(timeInSec, initialHeight);
+		cout << "At " << timeInSec << "seconds, the ball is at the height: " << height << "meteres" << endl;
 	}
 
 	return 0;
