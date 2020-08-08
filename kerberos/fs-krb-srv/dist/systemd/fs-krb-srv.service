@@ -1,0 +1,18 @@
+[Unit]
+Description=fs-krb-srv service
+After=network.target local-fs.target
+After=fs-ticket-srv.service
+
+[Service]
+EnvironmentFile=/opt/forsys/fs-krb-srv/env.file
+StandardOutput=syslog+console
+StandardError=syslog+console
+SyslogIdentifier=FSKRB
+WorkingDirectory=/opt/forsys/fs-krb-srv
+ExecStart=/usr/bin/python fs-krb-srv.py
+Type=simple
+Restart=always
+RestartSec=20
+
+[Install]
+WantedBy=multi-user.target

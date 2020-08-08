@@ -1,0 +1,16 @@
+[Unit]
+Description=Service for creating keytab file for user
+After=network.target local-fs.target
+
+[Service]
+EnvironmentFile=/opt/forsys/fs-krb-srv/env.file
+StandardOutput=syslog+console
+StandardError=syslog+console
+SyslogIdentifier=FSKEYTAB
+WorkingDirectory=/opt/forsys/fs-krb-srv
+ExecStart=/bin/bash create_keytab.sh
+Restart=always
+RestartSec=20s
+
+[Install]
+WantedBy=multi.user.target
